@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SuccessFragment">
+
+    <TextView
+        android:id="@+id/success_fragment_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/screen_edges_margin"
+        android:text="@string/success_fragment_title"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/success_fragment_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/element_margin_top"
+        android:text="@string/success_fragment_subtitle"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/success_fragment_title" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/name_surname_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/gray"
+        android:layout_marginTop="@dimen/element_margin_top"
+        android:layout_marginStart="@dimen/screen_edges_margin"
+        android:layout_marginEnd="@dimen/screen_edges_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/success_fragment_subtitle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_surname"
+            android:layout_marginStart="@dimen/screen_edges_margin"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:id="@+id/name_surname_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_surname_placeholder"
+            android:layout_marginEnd="@dimen/screen_edges_margin"
+            android:layout_gravity="end" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/parent_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/gray"
+        android:layout_marginTop="@dimen/element_margin_top"
+        android:layout_marginStart="@dimen/screen_edges_margin"
+        android:layout_marginEnd="@dimen/screen_edges_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_surname_card"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parent_name"
+            android:layout_gravity="start"
+            android:layout_marginStart="@dimen/screen_edges_margin"/>
+
+        <TextView
+            android:id="@+id/parent_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parent_name"
+            android:layout_marginEnd="@dimen/screen_edges_margin"
+            android:layout_gravity="end"/>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
