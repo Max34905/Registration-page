@@ -43,12 +43,15 @@ public class ParentFragment extends Fragment {
     }
 
     private void onClickContinueParentSignUp(View view) {
-        String parentInput = binding.parentNameInput.getText().toString();
-        if (isParentInputValid(parentInput)) {
-            model.setUserParentName(parentInput);
+        String parentName = binding.parentNameInput.getText().toString();
+        String name = ParentFragmentArgs.fromBundle(getArguments()).getName();
+        String surname = ParentFragmentArgs.fromBundle(getArguments()).getSurname();
+        String password = ParentFragmentArgs.fromBundle(getArguments()).getPassword();
+        if (isParentInputValid(parentName)) {
+            model.registerUser(name, surname, password, parentName);
             navController.navigate(R.id.action_parentFragment_to_successFragment);
         } else {
-            handleParentInputErrors(parentInput);
+            handleParentInputErrors(parentName);
         }
     }
 

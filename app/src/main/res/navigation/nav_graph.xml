@@ -25,6 +25,15 @@
         <action
             android:id="@+id/action_parentFragment_to_successFragment"
             app:destination="@id/successFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="surname"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/successFragment"

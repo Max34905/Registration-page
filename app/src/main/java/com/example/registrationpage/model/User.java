@@ -4,12 +4,13 @@ public class User {
     private String name;
     private String surname;
     private String password;
-    private String parentName = null;
+    private String parentName;
 
-    public User(String name, String surname, String password) {
+    public User(String name, String surname, String password, String parentName) {
         this.name = name;
         this.surname = surname;
         this.password = password;
+        this.parentName = parentName;
     }
 
     public void setName(String name) {

@@ -9,7 +9,7 @@ public class RegistrationViewModel extends ViewModel {
     private MutableLiveData<User> userMutableLiveData;
 
     public RegistrationViewModel() {
-        User defaultUser = new User("DefaultName", "DefaultSurname", "DefaultPassword");
+        User defaultUser = new User("DefaultName", "DefaultSurname", "DefaultPassword", null);
         userMutableLiveData = new MutableLiveData<>(defaultUser);
     }
 
@@ -17,14 +17,8 @@ public class RegistrationViewModel extends ViewModel {
         return userMutableLiveData;
     }
 
-    public void registerUser(String name, String surname, String password) {
-        User user = new User(name, surname, password);
-        userMutableLiveData.setValue(user);
-    }
-
-    public void setUserParentName(String parentName) {
-        User user = userMutableLiveData.getValue();
-        user.setParentName(parentName);
+    public void registerUser(String name, String surname, String password, String parentName) {
+        User user = new User(name, surname, password, parentName);
         userMutableLiveData.setValue(user);
     }
 }

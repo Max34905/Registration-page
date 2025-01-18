@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -74,19 +75,19 @@ public class MainFragment extends Fragment {
     }
 
     private void performTransaction(ArrayList<String> inputArray) {
-        int action;
-
-        if (binding.adultSwitch.isChecked()) {
-            action = R.id.action_mainFragment_to_successFragment;
-        } else {
-            action = R.id.action_mainFragment_to_parentFragment;
-        }
         String name = inputArray.get(0);
         String surname = inputArray.get(1);
         String password = inputArray.get(2);
-        model.registerUser(name, surname, password);
 
-        navController.navigate(action);
+        if (binding.adultSwitch.isChecked()) {
+            model.registerUser(name, surname, password, null);
+            int action = R.id.action_mainFragment_to_successFragment;
+            navController.navigate(action);
+        } else {
+            NavDirections action =
+                    MainFragmentDirections.actionMainFragmentToParentFragment(name, surname, password);
+            navController.navigate(action);
+        }
     }
 
     private void handleInputErrors(ArrayList<String> inputArray) {
